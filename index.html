@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Обнажая душу — Исцеляя Любовью</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+  <div class="container header-flex">
+    <div class="logo">Обнажая&nbsp;душу</div>
+    <nav id="mainMenu" class="desktop-menu">
+      <a href="#top">Главная</a>
+      <a href="#afisha">Афиша</a>
+      <a href="#about">О проекте</a>
+      <a href="#archive">Архив</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+    <div class="burger" id="burger">&#9776;</div>
+  </div>
+</header>
+
+<nav id="fullscreenMenu" class="fullscreen-menu">
+  <a href="#top">Главная</a>
+  <a href="#afisha">Афиша</a>
+  <a href="#about">О проекте</a>
+  <a href="#archive">Архив</a>
+  <a href="#contacts">Контакты</a>
+</nav>
+
+<section id="top" class="hero">
+  <img src="images/photo1.jpg" alt="Hero image">
+  <div class="hero-text">
+    <h1>«Обнажая&nbsp;душу»<br><span>Исцеляя&nbsp;Любовью</span></h1>
+    <p>Творческий вечер, где&nbsp;реальные истории любви оживают на&nbsp;сцене — с&nbsp;музыкой, светом и&nbsp;настоящими чувствами.</p>
+    <a href="#afisha" class="button">Смотреть&nbsp;афишу</a>
+  </div>
+</section>
+
+<section id="afisha" class="section">
+  <div class="container">
+    <h2>Ближайшие события</h2>
+    <div class="cards" id="events">
+      <div class="card">
+        <img src="images/photo2.jpg" alt="Event 1">
+        <h3>Вечер исцеляющих историй любви</h3>
+        <p>19&nbsp;мая, Москва</p>
+        <button class="button open-popup" data-id="event1">Подробнее</button>
+      </div>
+      <div class="card">
+        <img src="images/photo3.jpg" alt="Event 2">
+        <h3>Женские голоса: чувственность и&nbsp;признание</h3>
+        <p>27&nbsp;мая, Санкт‑Петербург</p>
+        <button class="button open-popup" data-id="event2">Подробнее</button>
+      </div>
+      <div class="card">
+        <img src="images/photo4.jpg" alt="Event 3">
+        <h3>Любовь&nbsp;— это&nbsp;ты и&nbsp;я</h3>
+        <p>8&nbsp;июня, Казань</p>
+        <button class="button open-popup" data-id="event3">Подробнее</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="section light">
+  <div class="container">
+    <h2>О проекте</h2>
+    <p>«Обнажая душу». Исцеляя Любовью.<br><br>
+    Творческий вечер — церемония любви, рассказанная голосом и&nbsp;сердцем... (содержимое укорочено для примера)
+    </p>
+  </div>
+</section>
+
+<section id="archive" class="section">
+  <div class="container">
+    <h2>Архив мероприятий</h2>
+    <p class="archive-link open-popup" data-id="archive">Скоро появятся отчёты и&nbsp;фотографии прошедших вечеров</p>
+  </div>
+</section>
+
+<section id="contacts" class="section light">
+  <div class="container">
+    <h2>Контакты</h2>
+    <div class="socials">
+      <a href="#" class="icon">VK</a>
+      <a href="#" class="icon">TG</a>
+      <a href="#" class="icon">IG</a>
+    </div>
+    <form id="contactForm" class="contact-form">
+      <input type="email" placeholder="Ваш Email" required>
+      <textarea placeholder="Сообщение" required></textarea>
+      <button type="submit" class="button">Отправить</button>
+    </form>
+  </div>
+</section>
+
+<div class="popup-overlay" id="overlay">
+  <!-- popups same as before -->
+</div>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 «Обнажая душу». Все права защищены.</p>
+  </div>
+</footer>
+
+<script src="js/scripts.js"></script>
+</body>
+</html>
