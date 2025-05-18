@@ -1,5 +1,10 @@
+/ * Afisha section fix */
+#afisha {
+  padding: 80px 0;
+}
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,600&family=Marck+Script&family=Playfair+Display:wght@400;700&family=Inter:wght@400;500&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap');
 :root{
   --accent:#a67c52;
   --light:#f5f0eb;
@@ -17,6 +22,13 @@ header{position:fixed;top:0;left:0;width:100%;background:var(--light);border-bot
 nav.desktop-menu a{text-decoration:none;color:#333;margin-left:24px;font-weight:500;}
 nav.desktop-menu a:hover{color:var(--accent);}
 .burger{display:none;font-size:28px;cursor:pointer;background:none;border:none;}
+nav.desktop-menu a,
+.fullscreen-menu a {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+}
 
 /* Fullscreen menu */
 .fullscreen-menu{display:none;flex-direction:column;align-items:center;justify-content:center;position:fixed;inset:0;width:100vw;height:100vh;background:rgba(0,0,0,0.85);gap:24px;z-index:999;}
@@ -33,17 +45,39 @@ nav.desktop-menu a:hover{color:var(--accent);}
   background:rgba(0,0,0,.35);
   z-index:0;
 }
-.hero-text{position:absolute;top:30%;left:50%;transform:translate(-50%,-30%);text-align:center;color:#fff;text-shadow:0 4px 16px rgba(0,0,0,0.8);z-index:1;font-family:"Cormorant Infant",serif;}
-.hero-text h1{font-size:48px;line-height:1.1;margin-bottom:16px;font-style:italic;}
-.hero-text h1 span{font-family:"Marck Script",cursive;font-size:36px;font-style:normal;}
-.hero-text p{max-width:640px;margin:0 auto 24px;}
-.button{background:var(--accent);color:#fff;border:none;padding:12px 24px;border-radius:4px;font-size:16px;cursor:pointer;text-decoration:none;display:inline-block;}
+.hero-text{position:absolute;top:23%;left:50%;transform:translate(-50%,-30%);text-align:center;color:#fff;text-shadow:0 4px 16px rgba(0,0,0,0.8);z-index:1;font-family:"Cormorant Infant",serif;}
+.hero-text h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 52px;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+.hero-text span {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.hero-text p {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 20px;
+  margin-bottom: 24px;
+}
+.button{background:var(--accent);color:#fff;border:none;padding:12px 24px;border-radius:4px;font-size:19px;cursor:pointer;text-decoration:none;display:inline-block;}
 .button:hover{background:#8c663f;}
 
 /* Sections */
 .section{padding:80px 0;}
 .section.light{background:var(--light);}
-h2{font-size:32px;margin-bottom:40px;text-align:center;font-family:"Playfair Display",serif;}
+h2 {
+  font-size: 18px;
+  margin-bottom: 24px;
+  text-align: left;
+  text-transform: uppercase;
+  color: #666;
+  font-family: "Playfair Display", serif;
+}
 
 /* Cards */
 .cards{display:grid;gap:32px;}
@@ -70,6 +104,105 @@ h2{font-size:32px;margin-bottom:40px;text-align:center;font-family:"Playfair Dis
 footer{background:#222;color:#fff;text-align:center;padding:24px 0;}
 footer a{color:var(--accent);text-decoration:none;}
 
+/* Universal .cards-carousel styles */
+.cards-carousel .card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #222;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  scroll-snap-align: start;
+  min-width: 78vw;
+  max-width: 78vw;
+  aspect-ratio: 2/3;
+  margin-right: 8px;
+}
+.cards-carousel .img-wrap {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  flex: 1;
+}
+.cards-carousel .img-wrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.cards-carousel .img-wrap .img-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: transparent;
+  pointer-events: auto;
+}
+.cards-carousel .fav-btn {
+  position: absolute;
+  top: 14px; right: 16px;
+  background: rgba(255,255,255,0.65);
+  border: none;
+  border-radius: 50%;
+  width: 38px; height: 38px;
+  display: flex; align-items: center; justify-content: center;
+  color: #b18a5f;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+}
+.cards-carousel .card-content {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background: linear-gradient(0deg,rgba(0,0,0,0.55) 60%,rgba(0,0,0,0.05) 100%);
+  padding: 24px 18px 18px 18px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+}
+.cards-carousel .card-meta {
+  font-size: 12px;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 5px;
+  font-family: "Inter", sans-serif;
+}
+.cards-carousel .card h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  font-family: "Playfair Display", serif;
+  line-height: 1.22;
+}
+.cards-carousel .card p {
+  font-size: 14px;
+  margin: 0 0 12px 0;
+  font-family: "Inter", sans-serif;
+  opacity: 0.92;
+}
+.cards-carousel .card .button {
+  margin-bottom: 0;
+  border-radius: 18px;
+  padding: 10px 18px;
+  background: var(--accent, #b18a5f);
+  color: #fff;
+  border: none;
+  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+
 /* Responsive */
 @media (min-width:600px){
   .cards{grid-template-columns:repeat(2,1fr);}
@@ -78,6 +211,142 @@ footer a{color:var(--accent);text-decoration:none;}
   .cards{grid-template-columns:repeat(3,1fr);}
 }
 @media (max-width:767px){
+  #afisha {
+    height: 100vh;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slider-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
+  }
+
+  .slider-header {
+    flex: 0 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 24px; /* 👈 добавляет отступ сверху */
+  }
+
+  .slider-wrapper {
+    flex: 1;
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    min-height: 0;
+  }
+
+  .cards {
+    display: flex;
+    flex: 1;
+    min-height: 0;
+  }
+
+  .cards .card {
+    min-width: 100vw;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 24px;
+    height: 100%;
+  }
+
   nav.desktop-menu{display:none;}
   .burger{display:block;}
+
+  .cards .card img {
+    max-height: 60vh;
+    object-fit: cover;
+  }
+
+  .slider-footer {
+    flex: 0 0 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .dot-container {
+    display: flex;
+    gap: 8px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+  }
+  .dot.active {
+    background: var(--accent);
+  }
+  /* --- Afisha.ru-style mobile cards carousel --- */
+  .cards-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 18px;
+    padding: 24px 0 24px 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 38vw;
+  }
+}
+
+@media (min-width: 768px) {
+  .cards-carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 32px;
+    padding: 40px 0;
+    overflow: visible;
+  }
+
+  .cards-carousel .card {
+    min-width: 0 !important;
+    max-width: none !important;
+    margin-right: 0 !important;
+    height: auto !important;
+    width: 100%;
+    aspect-ratio: 2/3 !important;
+    border-radius: 22px;
+    background: #222 !important;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+    padding: 0 !important;
+  }
+
+  .cards-carousel .img-wrap {
+    height: 320px;
+    min-height: 220px;
+    max-height: 360px;
+  }
+  .cards-carousel .img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .cards-carousel .card-content {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    background: linear-gradient(0deg,rgba(0,0,0,0.55) 60%,rgba(0,0,0,0.05) 100%);
+    padding: 24px 18px 18px 18px;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.35);
+  }
+
+  .cards-carousel .fav-btn {
+    position: absolute;
+    top: 14px; right: 16px;
+  }
 }

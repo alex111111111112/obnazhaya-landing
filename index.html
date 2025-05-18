@@ -5,8 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Обнажая душу — Исцеляя Любовью</title>
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
-<body>
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script><body>
 <header>
   <div class="container header-flex">
     <div class="logo">Обнажая&nbsp;душу</div>
@@ -39,28 +40,88 @@
 </section>
 
 <section id="afisha" class="section">
-  <div class="container">
+  <div class="slider-header">
     <h2>Ближайшие события</h2>
-    <div class="cards" id="events">
-      <div class="card">
-        <img src="images/photo2.jpg" alt="Event 1">
-        <h3>Вечер исцеляющих историй любви</h3>
-        <p>19&nbsp;мая, Москва</p>
-        <button class="button open-popup" data-id="event1">Подробнее</button>
+  </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img-wrap">
+            <img src="images/photo2.jpg" alt="Москва">
+            <div class="img-overlay"></div>
+            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Событие</div>
+            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+            <p>19 мая, Москва</p>
+            <button class="button open-popup" data-id="event1">Подробнее</button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <img src="images/photo3.jpg" alt="Event 2">
-        <h3>Женские голоса: чувственность и&nbsp;признание</h3>
-        <p>27&nbsp;мая, Санкт‑Петербург</p>
-        <button class="button open-popup" data-id="event2">Подробнее</button>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img-wrap">
+            <img src="images/photo3.jpg" alt="Черногория">
+            <div class="img-overlay"></div>
+            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Событие</div>
+            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+            <p>27 мая, Черногория</p>
+            <button class="button open-popup" data-id="event2">Подробнее</button>
+          </div>
+        </div>
       </div>
-      <div class="card">
-        <img src="images/photo4.jpg" alt="Event 3">
-        <h3>Любовь&nbsp;— это&nbsp;ты и&nbsp;я</h3>
-        <p>8&nbsp;июня, Казань</p>
-        <button class="button open-popup" data-id="event3">Подробнее</button>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img-wrap">
+            <img src="images/photo4.jpg" alt="Санкт-Петербург">
+            <div class="img-overlay"></div>
+            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Событие</div>
+            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+            <p>30 июня, Санкт-Петербург</p>
+            <button class="button open-popup" data-id="event3">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img-wrap">
+            <img src="images/photo2.jpg" alt="Иркутск">
+            <div class="img-overlay"></div>
+            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Событие</div>
+            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+            <p>18 августа, Иркутск</p>
+            <button class="button open-popup" data-id="event4">Подробнее</button>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-slide">
+        <div class="card">
+          <div class="img-wrap">
+            <img src="images/photo3.jpg" alt="Сочи">
+            <div class="img-overlay"></div>
+            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+          </div>
+          <div class="card-content">
+            <div class="card-meta">Событие</div>
+            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+            <p>23 октября, Сочи</p>
+            <button class="button open-popup" data-id="event5">Подробнее</button>
+          </div>
+        </div>
       </div>
     </div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
@@ -68,8 +129,27 @@
   <div class="container">
     <h2>О проекте</h2>
     <p>«Обнажая душу». Исцеляя Любовью.<br><br>
-    Творческий вечер — церемония любви, рассказанная голосом и&nbsp;сердцем... (содержимое укорочено для примера)
-    </p>
+      Творческий вечер — церемония любви, рассказанная голосом и сердцем.<br><br>
+
+      Это не спектакль. Это не концерт. Это — живое, глубокое, почти интимное пространство, где оживают настоящие истории любви. Истории, рассказанные мне парами, молодожёнами, влюблёнными. Я собираю эти рассказы как церемониймейстер на свадьбах, проникаюсь каждым нюансом их чувств и превращаю их в художественное повествование. На этом вечере вы услышите их: искренние, трепетные, местами ранимые и очень настоящие.<br><br>
+
+      Я расскажу вам о любви — через слово, голос и музыку. О тех чувствах, которые делают нас ближе. О том, что мы часто забываем в суете. И, быть может, вы узнаете в этих историях себя. Или увидите, в чём ваша любовь.<br><br>
+
+      <strong>Вас ждёт:</strong><br>
+      &mdash; Чтение реальных историй любви в художественной форме;<br>
+      &mdash; Живое музыкальное сопровождение — импровизация, акустика, тонкое эмоциональное звучание;<br>
+      &mdash; Атмосфера, в которой сердце раскрывается само собой.<br><br>
+
+      <strong>Формат мероприятия:</strong><br>
+      • творческий вечер / театральное чтение<br>
+      • музыкально-сценическая постановка<br>
+      • камерная атмосфера живого присутствия<br><br>
+
+      <strong>Цель вечера:</strong><br>
+      Вернуть ощущение любви — живой, вдохновляющей, не идеальной, но настоящей. Чтобы вспомнить, как это — быть влюблённым. Чтобы прикоснуться к чьей-то истории — и услышать в ней отклик своей.<br><br>
+
+      <strong>Дата, место, время:</strong><br>
+      (здесь она может указать конкретику — и это будет отлично сочетаться с поэтичным тоном выше)</p>
   </div>
 </section>
 
@@ -97,7 +177,38 @@
 </section>
 
 <div class="popup-overlay" id="overlay">
-  <!-- popups same as before -->
+  <div class="popup" id="popup-event1">
+    <button class="close">&times;</button>
+    <h2>Вечер исцеляющих историй любви</h2>
+    <p>Полное описание мероприятия.<br><!-- ВИДЖЕТ ОПЛАТЫ --></p>
+    <div class="gallery">
+      <img src="images/photo2.jpg" alt="Превью 1">
+    </div>
+  </div>
+
+  <div class="popup" id="popup-event2">
+    <button class="close">&times;</button>
+    <h2>Женские голоса: чувственность и&nbsp;признание</h2>
+    <p>Полное описание мероприятия.<br><!-- ВИДЖЕТ ОПЛАТЫ --></p>
+    <div class="gallery">
+      <img src="images/photo3.jpg" alt="Превью 2">
+    </div>
+  </div>
+
+  <div class="popup" id="popup-event3">
+    <button class="close">&times;</button>
+    <h2>Любовь&nbsp;— это&nbsp;ты и&nbsp;я</h2>
+    <p>Полное описание мероприятия.<br><!-- ВИДЖЕТ ОПЛАТЫ --></p>
+    <div class="gallery">
+      <img src="images/photo4.jpg" alt="Превью 3">
+    </div>
+  </div>
+
+  <div class="popup" id="popup-archive">
+    <button class="close">&times;</button>
+    <h2>Архив мероприятий</h2>
+    <p>Скоро появятся отчёты и&nbsp;фотографии прошедших вечеров.</p>
+  </div>
 </div>
 
 <footer>
@@ -109,3 +220,23 @@
 <script src="js/scripts.js"></script>
 </body>
 </html>
+// Инициализация Swiper только для блока афиши
+<script>const swiper = new Swiper('.swiper-container', {
+slidesPerView: 'auto',
+spaceBetween: 18,
+loop: true,
+centeredSlides: true,
+pagination: {
+el: '.swiper-pagination',
+clickable: true,
+},
+// Сетка на десктопе (три карточки в строке, без loop)
+breakpoints: {
+768: {
+slidesPerView: 3,
+spaceBetween: 32,
+centeredSlides: false,
+loop: false
+}
+}
+});</script>
