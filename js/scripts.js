@@ -61,10 +61,11 @@ function visibleCount() {
 }
 
 function cardStepWidth() {
-  return cards[0].offsetWidth + 24;
+  return cards[0] ? cards[0].offsetWidth + 24 : 0;
 }
 
 function scrollToCardGroup(index) {
+  if (!track) return;
   const offset = cardStepWidth() * visibleCount() * index;
   track.scrollTo({ left: offset, behavior: 'smooth' });
 }
@@ -93,7 +94,7 @@ document.querySelector('.nav.prev')?.addEventListener('click', () => {
 });
 
 window.addEventListener('resize', () => {
-  scrollToCardGroup(currentIndex);
+  if (track) scrollToCardGroup(currentIndex);
 });
 
 
