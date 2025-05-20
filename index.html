@@ -4,24 +4,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Обнажая душу — Исцеляя Любовью</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&family=Dancing+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 <header>
   <div class="container header-flex">
     <div class="logo">Обнажая&nbsp;душу</div>
-    <nav id="mainMenu" class="desktop-menu">
+    <nav id="mainMenu" class="desktop-menu" aria-label="Основная навигация" role="navigation">
       <a href="#top">Главная</a>
       <a href="#afisha">Афиша</a>
       <a href="#about">О проекте</a>
       <a href="#archive">Архив</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <div class="burger" id="burger">&#9776;</div>
+    <div class="burger" id="burger" role="button" tabindex="0" aria-label="Открыть меню">&#9776;</div>
   </div>
 </header>
 
-<nav id="fullscreenMenu" class="fullscreen-menu">
+<nav id="fullscreenMenu" class="fullscreen-menu" aria-label="Мобильное меню" role="navigation">
   <a href="#top">Главная</a>
   <a href="#afisha">Афиша</a>
   <a href="#about">О проекте</a>
@@ -210,6 +213,8 @@
     <p>&copy; 2025 «Обнажая душу». Все права защищены.</p>
   </div>
 </footer>
+
+<button id="toTop" class="to-top" aria-label="Наверх">↑</button>
 
 <script src="js/scripts.js"></script>
 </body>
