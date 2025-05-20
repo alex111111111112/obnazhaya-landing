@@ -2,14 +2,18 @@
 #afisha {
   padding: 80px 0;
 }
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@1,600&family=Marck+Script&family=Playfair+Display:ital,wght@0,400;0,700;1,500&family=Cormorant+Garamond:ital,wght@1,500&family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@400;600&family=Dancing+Script&display=swap');
 :root{
   --accent:#a67c52;
   --light:#f5f0eb;
+  --dark:#333;
+  --bg-dark:#222;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
-body{font-family:"Inter", sans-serif;color:#333;line-height:1.4;}
+body{font-family:'Open Sans', sans-serif;color:var(--dark);line-height:1.4;}
+h1, h2, h3 {font-family:'Playfair Display', serif;}
+em {font-family:'Dancing Script', cursive;}
 img{max-width:100%;display:block;}
 .container{width:90%;max-width:1200px;margin:0 auto;}
 
@@ -17,7 +21,7 @@ img{max-width:100%;display:block;}
 header{position:fixed;top:0;left:0;width:100%;background:var(--light);border-bottom:1px solid #ddd;z-index:1000;}
 .header-flex{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
 .logo{font-size:26px;font-weight:700;font-family:"Playfair Display",serif;}
-nav.desktop-menu a{text-decoration:none;color:#333;margin-left:24px;font-weight:500;}
+nav.desktop-menu a{text-decoration:none;color:var(--dark);margin-left:24px;font-weight:500;}
 nav.desktop-menu a:hover{color:var(--accent);}
 .burger{display:none;font-size:28px;cursor:pointer;background:none;border:none;}
 nav.desktop-menu a,
@@ -89,7 +93,7 @@ h2 {
 .popup-overlay.open{display:flex;}
 .popup{display:none;background:#fff;padding:32px;border-radius:8px;max-width:600px;width:90%;max-height:90vh;overflow:auto;position:relative;}
 .popup.open{display:block;}
-.popup .close{position:absolute;top:8px;right:12px;font-size:28px;cursor:pointer;background:none;border:none;color:#333;}
+.popup .close{position:absolute;top:8px;right:12px;font-size:28px;cursor:pointer;background:none;border:none;color:var(--dark);}
 .gallery{margin-top:16px;display:flex;gap:12px;}
 
 /* Contacts */
@@ -99,7 +103,7 @@ h2 {
 .contact-form input,.contact-form textarea{padding:12px;border:1px solid #ccc;border-radius:4px;font-size:16px;width:100%;}
 .contact-form textarea{resize:vertical;height:120px;}
 
-footer{background:#222;color:#fff;text-align:center;padding:24px 0;}
+footer{background:var(--bg-dark);color:#fff;text-align:center;padding:24px 0;}
 footer a{color:var(--accent);text-decoration:none;}
 
 /* Universal .cards-carousel styles */
@@ -107,7 +111,7 @@ footer a{color:var(--accent);text-decoration:none;}
   position: relative;
   border-radius: 22px;
   overflow: hidden;
-  background: #222;
+  background: var(--bg-dark);
   box-shadow: 0 4px 24px rgba(0,0,0,0.10);
   display: flex;
   flex-direction: column;
@@ -335,7 +339,7 @@ footer a{color:var(--accent);text-decoration:none;}
     scroll-snap-align: unset !important;
     display: flex;
     flex-direction: column;
-    background: #222 !important;
+    background: var(--bg-dark) !important;
   }
 
   .cards-carousel .img-wrap {
@@ -391,7 +395,7 @@ footer a{color:var(--accent);text-decoration:none;}
   height: 120px;
   border-radius: 18px;
   overflow: hidden;
-  background: #222;
+  background: var(--bg-dark);
   position: relative;
   box-shadow: 0 4px 20px rgba(0,0,0,0.13);
   text-decoration: none;
@@ -479,3 +483,11 @@ footer a{color:var(--accent);text-decoration:none;}
   padding: 6px 0 4px 0;
   z-index: 2;
 }
+
+/* Scroll animations */
+.section {opacity:0; transform:translateY(30px); transition:opacity .6s ease, transform .6s ease;}
+.section.visible {opacity:1; transform:none;}
+
+/* Back to top button */
+.to-top {position:fixed; right:20px; bottom:20px; display:none; background:var(--accent); color:#fff; border:none; border-radius:50%; padding:10px 14px; cursor:pointer;}
+.to-top.show {display:block;}

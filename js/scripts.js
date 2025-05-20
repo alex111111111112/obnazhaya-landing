@@ -2,6 +2,10 @@ const burger = document.getElementById('burger');
 const fullMenu = document.getElementById('fullscreenMenu');
 burger.addEventListener('click', () => {
   fullMenu.classList.toggle('open');
+  burger.classList.toggle('open');
+});
+burger.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') burger.click();
 });
 fullMenu.addEventListener('click', (e) => {
   if (e.target.tagName === 'A' || e.target === fullMenu) {
@@ -162,3 +166,24 @@ favButtons.forEach(btn => {
     localStorage.setItem('favs', JSON.stringify(favs));
   });
 });
+
+// Back to top button
+const toTop = document.getElementById('toTop');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) toTop.classList.add('show');
+  else toTop.classList.remove('show');
+});
+toTop?.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Reveal sections on scroll
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.section').forEach(sec => revealObserver.observe(sec));
