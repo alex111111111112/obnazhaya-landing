@@ -296,7 +296,20 @@ footer a{color:var(--accent);text-decoration:none;}
     padding: 24px 0 24px 16px;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
-    padding-right: 38vw;
+  }
+  .afisha-preview-link {
+    width: 84px !important;
+    height: 84px !important;
+    min-width: 0;
+    min-height: 0;
+    flex: 0 0 auto;
+    border-radius: 15px;
+    margin-bottom: 7px;
+  }
+  .afisha-preview-label {
+    font-size: 15px;
+    padding: 10px 0 7px 0;
+    border-radius: 0 0 15px 15px;
   }
 }
 
@@ -307,30 +320,33 @@ footer a{color:var(--accent);text-decoration:none;}
     gap: 32px;
     padding: 40px 0;
     overflow: visible;
+    min-height: 0;
   }
 
   .cards-carousel .card {
     min-width: 0 !important;
-    max-width: none !important;
-    margin-right: 0 !important;
-    height: auto !important;
-    width: 100%;
+    width: 100% !important;
     aspect-ratio: 2/3 !important;
-    border-radius: 22px;
+    height: auto !important;
+    margin-right: 0 !important;
+    scroll-snap-align: unset !important;
+    display: flex;
+    flex-direction: column;
     background: #222 !important;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.10);
-    padding: 0 !important;
   }
 
   .cards-carousel .img-wrap {
-    height: 320px;
-    min-height: 220px;
-    max-height: 360px;
+    aspect-ratio: 2/3;
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    height: auto;
   }
   .cards-carousel .img-wrap img {
+    aspect-ratio: 2/3;
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    display: block;
   }
   .cards-carousel .card-content {
     position: absolute;
@@ -349,4 +365,114 @@ footer a{color:var(--accent);text-decoration:none;}
     position: absolute;
     top: 14px; right: 16px;
   }
+}
+/* === Hero Afisha Preview & Titles === */
+.hero-content-row {
+  position: absolute;
+  top: 8%;
+  left: 0; right: 0;
+  width: 92%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 38px;
+  z-index: 3;
+}
+
+.afisha-preview-link {
+  margin-top: 18px;
+  display: block;
+  width: 120px;
+  height: 120px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #222;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.13);
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .14s, box-shadow .14s;
+}
+.afisha-preview-link:hover,
+.afisha-preview-link:focus {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+.afisha-preview-link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+}
+.hero-titles {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.28);
+  margin-top: 0;
+}
+
+.hero-titles h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 40px;
+  margin: 0 0 7px 0;
+  color: #fff;
+  letter-spacing: 0.01em;
+  text-shadow: 0 3px 14px rgba(0,0,0,0.33);
+}
+.hero-titles h1::before { content: '«'; }
+.hero-titles h1::after  { content: '»'; }
+
+.hero-titles span {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 27px;
+  color: #fff;
+  margin-bottom: 13px;
+  margin-top: 4px;
+  letter-spacing: 0.01em;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.32);
+  display: block;
+}
+
+.hero-titles .hero-desc {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 21px;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 0;
+  opacity: 0.94;
+  line-height: 1.37;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.28);
+  max-width: 540px;
+}
+
+.afisha-preview-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 18px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: .02em;
+  text-align: center;
+  border-radius: 0 0 15px 15px;
+  pointer-events: none;
+  user-select: none;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+  text-shadow: 0 2px 10px rgba(0,0,0,0.45);
+  background: linear-gradient(0deg,rgba(0,0,0,0.66) 60%,rgba(0,0,0,0.13) 100%);
+  display: block;
+  width: 100%;
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 6px 0 4px 0;
+  z-index: 2;
 }

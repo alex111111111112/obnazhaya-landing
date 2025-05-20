@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Обнажая душу — Исцеляя Любовью</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
-<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script><body>
+<body>
 <header>
   <div class="container header-flex">
     <div class="logo">Обнажая&nbsp;душу</div>
@@ -32,10 +31,16 @@
 
 <section id="top" class="hero">
   <img src="images/photo1.jpg" alt="Hero image">
-  <div class="hero-text">
-    <h1>«Обнажая&nbsp;душу»<br><span>Исцеляя&nbsp;Любовью</span></h1>
-    <p>Творческий вечер, где&nbsp;реальные истории любви оживают на&nbsp;сцене — с&nbsp;музыкой, светом и&nbsp;настоящими чувствами.</p>
-    <a href="#afisha" class="button">Смотреть&nbsp;афишу</a>
+  <div class="hero-content-row">
+    <a href="#afisha" class="afisha-preview-link">
+      <img src="images/photo2.jpg" alt="Превью афиши">
+      <span class="afisha-preview-label">Смотреть афишу</span>
+    </a>
+    <div class="hero-titles">
+      <h1>Обнажая душу</h1>
+      <span>Исцеляя Любовью</span>
+      <div class="hero-desc">Творческий вечер, где реальные истории любви оживают на сцене — с музыкой, светом и настоящими чувствами.</div>
+    </div>
   </div>
 </section>
 
@@ -43,85 +48,74 @@
   <div class="slider-header">
     <h2>Ближайшие события</h2>
   </div>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img-wrap">
-            <img src="images/photo2.jpg" alt="Москва">
-            <div class="img-overlay"></div>
-            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
-          </div>
-          <div class="card-content">
-            <div class="card-meta">Событие</div>
-            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
-            <p>19 мая, Москва</p>
-            <button class="button open-popup" data-id="event1">Подробнее</button>
-          </div>
+  <div class="slider-wrapper">
+    <div class="cards-carousel">
+      <div class="card">
+        <div class="img-wrap">
+          <img src="images/photo2.jpg" alt="Москва">
+          <div class="img-overlay"></div>
+          <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">Событие</div>
+          <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+          <p>19 мая, Москва</p>
+          <button class="button open-popup" data-id="event1">Подробнее</button>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img-wrap">
-            <img src="images/photo3.jpg" alt="Черногория">
-            <div class="img-overlay"></div>
-            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
-          </div>
-          <div class="card-content">
-            <div class="card-meta">Событие</div>
-            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
-            <p>27 мая, Черногория</p>
-            <button class="button open-popup" data-id="event2">Подробнее</button>
-          </div>
+      <div class="card">
+        <div class="img-wrap">
+          <img src="images/photo3.jpg" alt="Черногория">
+          <div class="img-overlay"></div>
+          <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">Событие</div>
+          <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+          <p>27 мая, Черногория</p>
+          <button class="button open-popup" data-id="event2">Подробнее</button>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img-wrap">
-            <img src="images/photo4.jpg" alt="Санкт-Петербург">
-            <div class="img-overlay"></div>
-            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
-          </div>
-          <div class="card-content">
-            <div class="card-meta">Событие</div>
-            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
-            <p>30 июня, Санкт-Петербург</p>
-            <button class="button open-popup" data-id="event3">Подробнее</button>
-          </div>
+      <div class="card">
+        <div class="img-wrap">
+          <img src="images/photo4.jpg" alt="Санкт-Петербург">
+          <div class="img-overlay"></div>
+          <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">Событие</div>
+          <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+          <p>30 июня, Санкт-Петербург</p>
+          <button class="button open-popup" data-id="event3">Подробнее</button>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img-wrap">
-            <img src="images/photo2.jpg" alt="Иркутск">
-            <div class="img-overlay"></div>
-            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
-          </div>
-          <div class="card-content">
-            <div class="card-meta">Событие</div>
-            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
-            <p>18 августа, Иркутск</p>
-            <button class="button open-popup" data-id="event4">Подробнее</button>
-          </div>
+      <div class="card">
+        <div class="img-wrap">
+          <img src="images/photo2.jpg" alt="Иркутск">
+          <div class="img-overlay"></div>
+          <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">Событие</div>
+          <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+          <p>18 августа, Иркутск</p>
+          <button class="button open-popup" data-id="event4">Подробнее</button>
         </div>
       </div>
-      <div class="swiper-slide">
-        <div class="card">
-          <div class="img-wrap">
-            <img src="images/photo3.jpg" alt="Сочи">
-            <div class="img-overlay"></div>
-            <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
-          </div>
-          <div class="card-content">
-            <div class="card-meta">Событие</div>
-            <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
-            <p>23 октября, Сочи</p>
-            <button class="button open-popup" data-id="event5">Подробнее</button>
-          </div>
+      <div class="card">
+        <div class="img-wrap">
+          <img src="images/photo3.jpg" alt="Сочи">
+          <div class="img-overlay"></div>
+          <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
+        </div>
+        <div class="card-content">
+          <div class="card-meta">Событие</div>
+          <h3>Творческий вечер «Обнажая душу». Исцеляя любовью</h3>
+          <p>23 октября, Сочи</p>
+          <button class="button open-popup" data-id="event5">Подробнее</button>
         </div>
       </div>
     </div>
-    <div class="swiper-pagination"></div>
   </div>
 </section>
 
@@ -220,23 +214,3 @@
 <script src="js/scripts.js"></script>
 </body>
 </html>
-// Инициализация Swiper только для блока афиши
-<script>const swiper = new Swiper('.swiper-container', {
-slidesPerView: 'auto',
-spaceBetween: 18,
-loop: true,
-centeredSlides: true,
-pagination: {
-el: '.swiper-pagination',
-clickable: true,
-},
-// Сетка на десктопе (три карточки в строке, без loop)
-breakpoints: {
-768: {
-slidesPerView: 3,
-spaceBetween: 32,
-centeredSlides: false,
-loop: false
-}
-}
-});</script>
