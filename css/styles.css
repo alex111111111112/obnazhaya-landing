@@ -43,23 +43,22 @@ nav.desktop-menu a,
   background:rgba(0,0,0,.45);
   z-index:0;
 }
-.hero-text{position:absolute;top:23%;left:50%;transform:translate(-50%,-30%);text-align:center;color:#fff;text-shadow:0 4px 16px rgba(0,0,0,0.8);z-index:1;font-family:"Cormorant Infant",serif;}
+.hero-text{position:static;margin-top:0;text-align:left;color:#333;text-shadow:none;z-index:1;font-family:'Cormorant Garamond',serif;}
 .hero-text h1 {
-  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-weight: 500;
-  font-size: 52px;
+  font-size: 40px;
   line-height: 1.2;
   margin-bottom: 24px;
 }
 .hero-text span {
-  font-size: 30px;
+  font-size: 24px;
   margin-bottom: 10px;
+  display:block;
 }
 .hero-text p {
-  font-family: 'Cormorant Garamond', serif;
   font-style: italic;
-  font-size: 20px;
+  font-size: 18px;
   margin-bottom: 24px;
 }
 .button{background:var(--accent);color:#fff;border:none;padding:12px 24px;border-radius:4px;font-size:19px;cursor:pointer;text-decoration:none;display:inline-block;}
@@ -478,4 +477,60 @@ footer a{color:var(--accent);text-decoration:none;}
   left: 0; right: 0; bottom: 0;
   padding: 6px 0 4px 0;
   z-index: 2;
+}
+
+/* === New Hero Layout === */
+.hero-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 120px auto 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 32px;
+  align-items: start;
+}
+
+.hero-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.hero-cards .card {
+  transition: transform .2s, box-shadow .2s;
+}
+
+.hero-cards .card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.hero-image {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: end;
+  justify-self: end;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    display: block;
+    margin-top: 80px;
+  }
+  .hero-cards {
+    grid-template-columns: 1fr;
+    margin-top: 20px;
+  }
+  .hero-image {
+    margin-top: 20px;
+  }
 }
