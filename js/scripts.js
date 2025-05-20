@@ -9,40 +9,53 @@ fullMenu.addEventListener('click', (e) => {
   }
 });
 
-// Popups
+// Popups with focus management
 const overlay = document.getElementById('overlay');
 const openButtons = document.querySelectorAll('.open-popup');
 const closeButtons = document.querySelectorAll('.popup .close');
+const focusable = 'a[href], button:not([disabled]), textarea, input, select, [tabindex]:not([tabindex="-1"])';
+let lastFocused = null;
 
-closeButtons.forEach(btn =>
-    btn.addEventListener('click', () => overlay.classList.remove('open'))
-);
+function trapTab(e) {
+  const popup = document.querySelector('.popup.open');
+  if (!popup) return;
+  const nodes = Array.from(popup.querySelectorAll(focusable));
+  if (!nodes.length) return;
+  const first = nodes[0];
+  const last = nodes[nodes.length - 1];
+  if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+    e.preventDefault();
+    (e.shiftKey ? last : first).focus();
+  }
+}
 
-openButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const id = btn.dataset.id;
-    document.querySelectorAll('.popup').forEach(p => p.classList.remove('open'));
-    const popup = document.getElementById('popup-' + id);
-    if (popup) {
-      popup.classList.add('open');
-      overlay.classList.add('open');
-    }
-  });
+function openModal(id) {
+  document.querySelectorAll('.popup').forEach(p => p.classList.remove('open'));
+  const popup = document.getElementById('popup-' + id);
+  if (popup) {
+    lastFocused = document.activeElement;
+    overlay.classList.add('open');
+    popup.classList.add('open');
+    document.querySelectorAll('body > :not(#overlay)').forEach(el => el.setAttribute('aria-hidden', 'true'));
+    const target = popup.querySelector(focusable) || popup;
+    target.focus();
+  }
+}
+
+function closeModal() {
+  overlay.classList.remove('open');
+  document.querySelectorAll('.popup').forEach(p => p.classList.remove('open'));
+  document.querySelectorAll('body > :not(#overlay)').forEach(el => el.removeAttribute('aria-hidden'));
+  if (lastFocused) lastFocused.focus();
+}
+
+closeButtons.forEach(btn => btn.addEventListener('click', closeModal));
+openButtons.forEach(btn => btn.addEventListener('click', () => openModal(btn.dataset.id)));
+overlay.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  if (e.key === 'Tab' && overlay.classList.contains('open')) trapTab(e);
 });
-
-// dynamic add close handlers once popups exist
-const observer = new MutationObserver(mutations => {
-  mutations.forEach(m => {
-    m.addedNodes.forEach(node => {
-      if (node.classList && node.classList.contains('popup')) {
-        const closeBtn = node.querySelector('.close');
-        if (closeBtn) closeBtn.addEventListener('click', () => overlay.classList.remove('open'));
-      }
-    });
-  });
-});
-observer.observe(document.body, {childList:true, subtree:true});
-overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('open'); });
 
 // Contact form
 document.getElementById('contactForm').addEventListener('submit', (e) => {
@@ -126,3 +139,26 @@ if (mobileTrack) {
     });
   });
 }
+
+// Favorite buttons
+const favButtons = document.querySelectorAll('.fav-btn');
+const storedFavs = JSON.parse(localStorage.getItem('favs') || '[]');
+favButtons.forEach(btn => {
+  const card = btn.closest('.card');
+  const id = card?.dataset.id;
+  if (!id) return;
+  if (storedFavs.includes(id)) btn.classList.add('active');
+  btn.addEventListener('click', () => {
+    let favs = JSON.parse(localStorage.getItem('favs') || '[]');
+    if (favs.includes(id)) {
+      favs = favs.filter(v => v !== id);
+      btn.classList.remove('active');
+      btn.setAttribute('aria-label', 'Добавить в избранное');
+    } else {
+      favs.push(id);
+      btn.classList.add('active');
+      btn.setAttribute('aria-label', 'Убрать из избранного');
+    }
+    localStorage.setItem('favs', JSON.stringify(favs));
+  });
+});

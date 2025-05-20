@@ -30,10 +30,10 @@
 </nav>
 
 <section id="top" class="hero">
-  <img src="images/photo1.jpg" alt="Hero image">
+  <img src="images/photo1.jpg" alt="Hero image" width="3588" height="5382">
   <div class="hero-content-row">
     <a href="#afisha" class="afisha-preview-link">
-      <img src="images/photo2.jpg" alt="Превью афиши">
+      <img src="images/photo2.jpg" alt="Превью афиши" width="1365" height="2048" loading="lazy">
       <span class="afisha-preview-label">Смотреть афишу</span>
     </a>
     <div class="hero-titles">
@@ -50,9 +50,9 @@
   </div>
   <div class="slider-wrapper">
     <div class="cards-carousel">
-      <div class="card">
+      <div class="card" data-id="event1">
         <div class="img-wrap">
-          <img src="images/photo2.jpg" alt="Москва">
+          <img src="images/photo2.jpg" alt="Москва" width="1365" height="2048" loading="lazy">
           <div class="img-overlay"></div>
           <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
         </div>
@@ -63,9 +63,9 @@
           <button class="button open-popup" data-id="event1">Подробнее</button>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="event2">
         <div class="img-wrap">
-          <img src="images/photo3.jpg" alt="Черногория">
+          <img src="images/photo3.jpg" alt="Черногория" width="1365" height="2048" loading="lazy">
           <div class="img-overlay"></div>
           <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
         </div>
@@ -76,9 +76,9 @@
           <button class="button open-popup" data-id="event2">Подробнее</button>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="event3">
         <div class="img-wrap">
-          <img src="images/photo4.jpg" alt="Санкт-Петербург">
+          <img src="images/photo4.jpg" alt="Санкт-Петербург" width="1365" height="2048" loading="lazy">
           <div class="img-overlay"></div>
           <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
         </div>
@@ -89,9 +89,9 @@
           <button class="button open-popup" data-id="event3">Подробнее</button>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="event4">
         <div class="img-wrap">
-          <img src="images/photo2.jpg" alt="Иркутск">
+          <img src="images/photo2.jpg" alt="Иркутск" width="1365" height="2048" loading="lazy">
           <div class="img-overlay"></div>
           <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
         </div>
@@ -102,9 +102,9 @@
           <button class="button open-popup" data-id="event4">Подробнее</button>
         </div>
       </div>
-      <div class="card">
+      <div class="card" data-id="event5">
         <div class="img-wrap">
-          <img src="images/photo3.jpg" alt="Сочи">
+          <img src="images/photo3.jpg" alt="Сочи" width="1365" height="2048" loading="lazy">
           <div class="img-overlay"></div>
           <button class="fav-btn" aria-label="Добавить в избранное">&#9829;</button>
         </div>
@@ -171,34 +171,34 @@
 </section>
 
 <div class="popup-overlay" id="overlay">
-  <div class="popup" id="popup-event1">
+  <div class="popup" id="popup-event1" role="dialog" aria-modal="true">
     <button class="close">&times;</button>
     <h2>Вечер исцеляющих историй любви</h2>
     <p>Полное описание мероприятия.<br><!-- ВИДЖЕТ ОПЛАТЫ --></p>
     <div class="gallery">
-      <img src="images/photo2.jpg" alt="Превью 1">
+      <img src="images/photo2.jpg" alt="Превью 1" width="1365" height="2048" loading="lazy">
     </div>
   </div>
 
-  <div class="popup" id="popup-event2">
+  <div class="popup" id="popup-event2" role="dialog" aria-modal="true">
     <button class="close">&times;</button>
     <h2>Женские голоса: чувственность и&nbsp;признание</h2>
     <p>Полное описание мероприятия.<br><!-- ВИДЖЕТ ОПЛАТЫ --></p>
     <div class="gallery">
-      <img src="images/photo3.jpg" alt="Превью 2">
+      <img src="images/photo3.jpg" alt="Превью 2" width="1365" height="2048" loading="lazy">
     </div>
   </div>
 
-  <div class="popup" id="popup-event3">
+  <div class="popup" id="popup-event3" role="dialog" aria-modal="true">
     <button class="close">&times;</button>
     <h2>Любовь&nbsp;— это&nbsp;ты и&nbsp;я</h2>
     <p>Полное описание мероприятия.<br><!-- ВИДЖЕТ ОПЛАТЫ --></p>
     <div class="gallery">
-      <img src="images/photo4.jpg" alt="Превью 3">
+      <img src="images/photo4.jpg" alt="Превью 3" width="1365" height="2048" loading="lazy">
     </div>
   </div>
 
-  <div class="popup" id="popup-archive">
+  <div class="popup" id="popup-archive" role="dialog" aria-modal="true">
     <button class="close">&times;</button>
     <h2>Архив мероприятий</h2>
     <p>Скоро появятся отчёты и&nbsp;фотографии прошедших вечеров.</p>
