@@ -17,6 +17,75 @@ em {font-family:'Dancing Script', cursive;}
 img{max-width:100%;display:block;}
 .container{width:90%;max-width:1200px;margin:0 auto;}
 
+/* New hero layout */
+.hero-section {
+  position: relative;
+  height: 100vh;
+  background: url('../images/photo1.jpg') no-repeat center center/cover;
+  color: #fff;
+  display: flex;
+  align-items: flex-start;
+  padding: 60px 80px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(20, 20, 20, 0.5);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.text-block {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.hero-description {
+  font-size: 1.3rem;
+}
+
+.hero-section .cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.hero-section .card {
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 30px 20px;
+    align-items: flex-start;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-section .cards {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Header */
 header{position:fixed;top:0;left:0;width:100%;background:var(--light);border-bottom:1px solid #ddd;z-index:1000;}
 .header-flex{display:flex;align-items:center;justify-content:space-between;padding:12px 0;}
